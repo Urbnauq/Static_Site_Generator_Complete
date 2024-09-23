@@ -1,5 +1,8 @@
 from textnode import TextNode
-from htmlnode import HTMLNode, LeafNode
+from htmlnode import (
+    HTMLNode, 
+    LeafNode, 
+    ParentNode)
 
 props = {
     "href": "https://www.google.com", 
@@ -16,5 +19,16 @@ def main():
     
     leafnode = LeafNode("a", "This is a leaf node", props)
     print(leafnode)
+    
+    parentnode = ParentNode(
+        "p",
+        [
+            LeafNode("b", "Bold text"),
+            LeafNode(None, "Normal text"),
+            LeafNode("i", "italic text"),
+            LeafNode(None, "Normal text"),
+        ]
+    )
+    print(parentnode.to_html())
     
 main()
