@@ -29,6 +29,11 @@ class TestParentNode(unittest.TestCase):
         node = ParentNode("p", children)
         result = '<p><b>Bold text</b>Normal text<i>italic text</i>Normal text</p>'
         self.assertEqual(node.to_html(), result)
+
+    def test_parent_to_html_props(self):
+        node = ParentNode("p", children, props)
+        result = '<p href="https://www.google.com" target="_blank"><b>Bold text</b>Normal text<i>italic text</i>Normal text</p>'
+        self.assertEqual(node.to_html(), result)
         
 if __name__ == "__main__":
     unittest.main()
