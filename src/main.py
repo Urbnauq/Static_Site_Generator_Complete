@@ -4,7 +4,8 @@ from htmlnode import (
     LeafNode, 
     ParentNode)
 from functions import (
-    text_node_to_html_node)
+    text_node_to_html_node,
+    split_nodes_delimiter)
 
 props = {
     "href": "https://www.google.com", 
@@ -35,5 +36,7 @@ def main():
     
     text_node_html_node = text_node_to_html_node(TextNode("This is a text node", "image", "https://www.boot.dev"))
     print(text_node_html_node)
+    
+    split_delimiter_nodes = split_nodes_delimiter(None, None, None)
     
 main()

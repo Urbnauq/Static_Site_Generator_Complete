@@ -40,7 +40,7 @@ class TestFunctions(unittest.TestCase):
         
     def test_image_eq(self):
         text_node_html_node = text_node_to_html_node(TextNode("This is a test", text_type_image, "https://www.boot.dev"))
-        results = LeafNode("img", None, {"src" : "https://www.boot.dev", "alt" : "This is a test"})
+        results = LeafNode("img", "", {"src" : "https://www.boot.dev", "alt" : "This is a test"})
         self.assertEqual(str(text_node_html_node), str(results))
         
     def test_exception_eq(self):
